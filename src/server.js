@@ -18,11 +18,11 @@ const mongooseOptions = {
   loggerLevel: 'error',
   useFindAndModify: false,
 };
+console.log('connecting to database...');
 mongoose.connect(mongoURI, mongooseOptions).then(() => {
-  console.log('Connected to Database');
-  console.log(mongoURI);
+  console.log('connected to database:', mongoURI);
 }).catch((err) => {
-  console.log('Not Connected to Database ERROR!  ', err);
+  console.log('error: could not connect to db:', err);
 });
 
 // initialize
